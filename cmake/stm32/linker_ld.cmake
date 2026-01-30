@@ -84,20 +84,20 @@ SECTIONS\n\
     __exidx_end = .;\n\
   } >FLASH\n\
 \n\
-  .preinit_array     :\n\
+  .preinit_array (READONLY)     :\n\
   {\n\
     PROVIDE_HIDDEN (__preinit_array_start = .);\n\
     KEEP (*(.preinit_array*))\n\
     PROVIDE_HIDDEN (__preinit_array_end = .);\n\
   } >FLASH\n\
-  .init_array :\n\
+  .init_array (READONLY) :\n\
   {\n\
     PROVIDE_HIDDEN (__init_array_start = .);\n\
     KEEP (*(SORT(.init_array.*)))\n\
     KEEP (*(.init_array*))\n\
     PROVIDE_HIDDEN (__init_array_end = .);\n\
   } >FLASH\n\
-  .fini_array :\n\
+  .fini_array (READONLY):\n\
   {\n\
     PROVIDE_HIDDEN (__fini_array_start = .);\n\
     KEEP (*(SORT(.fini_array.*)))\n\
